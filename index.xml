@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>绝世星星</title>
-    <link>dongxingHan.github.io/</link>
+    <link>https://dongxingHan.github.io/</link>
     <description>Recent content on 绝世星星</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
     <lastBuildDate>Tue, 24 Apr 2018 14:03:58 +0800</lastBuildDate>
     
-	<atom:link href="dongxingHan.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://dongxingHan.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Thread.interrupt()的真实含义</title>
-      <link>dongxingHan.github.io/post/interrupt/</link>
+      <link>https://dongxingHan.github.io/post/interrupt/</link>
       <pubDate>Tue, 24 Apr 2018 14:03:58 +0800</pubDate>
       
-      <guid>dongxingHan.github.io/post/interrupt/</guid>
+      <guid>https://dongxingHan.github.io/post/interrupt/</guid>
       <description>Thread.interrupt()本质上并未停止线程，只是把线程的终止状态设置为了true，如果要真正通过Thread.interrupt()停止线程，还需要线程自己去控制（下文详解）。要真正理解interrupt()方法，要先了解stop()方法。
 关于Thread.stop() &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;首先，在解释Thread.interrupt()方法之前，应该先了解下关于Thread.stop()方法。在jdk的源码中，可以看到stop方法是废弃的。为什么会废弃这个方法呢？因为stop()方法太暴力了，会强行把执行到一半的线程终止，导致有一些共用数据不一致（即使数据加锁）。
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Thread.stop()方法在结束线程时，会直接终止线程，并且释放该线程持有的锁。但是这些锁本是为了保证数据的同步。一旦线程执行到一半，并且强行终止了线程,那么另一个等待着该锁的线程会读到这个错误的数据，最终可能会导致得到的数据与期望的不符。
@@ -30,28 +30,28 @@ Thread t1 = new Thread( new Runnable(){ public void run(){ // 若未发生中断
     
     <item>
       <title>交流请联系</title>
-      <link>dongxingHan.github.io/contact/</link>
+      <link>https://dongxingHan.github.io/contact/</link>
       <pubDate>Mon, 23 Apr 2018 22:04:01 +0800</pubDate>
       
-      <guid>dongxingHan.github.io/contact/</guid>
+      <guid>https://dongxingHan.github.io/contact/</guid>
       <description>  QQ:961313899 邮箱：handongxing@126.com  </description>
     </item>
     
     <item>
       <title>First</title>
-      <link>dongxingHan.github.io/post/first/</link>
+      <link>https://dongxingHan.github.io/post/first/</link>
       <pubDate>Sat, 21 Apr 2018 18:57:51 +0800</pubDate>
       
-      <guid>dongxingHan.github.io/post/first/</guid>
+      <guid>https://dongxingHan.github.io/post/first/</guid>
       <description>第一次进行测试</description>
     </item>
     
     <item>
       <title>关于博主</title>
-      <link>dongxingHan.github.io/about/</link>
+      <link>https://dongxingHan.github.io/about/</link>
       <pubDate>Sat, 21 Apr 2018 18:21:53 +0800</pubDate>
       
-      <guid>dongxingHan.github.io/about/</guid>
+      <guid>https://dongxingHan.github.io/about/</guid>
       <description> 博主：韩冬兴 职业：javaEE 地址：北京市昌平区 </description>
     </item>
     
