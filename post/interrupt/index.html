@@ -258,9 +258,8 @@
 
 </div>
 
-  
-
-<p><strong>Thread.interrupt()本质上并未停止线程，只是把线程的终止状态设置为了true，如果要真正通过Thread.interrupt()停止线程，还需要线程自己去控制（下文详解）。要真正理解interrupt()方法，要先了解stop()方法。</strong></p>
+  <p><strong>Thread.interrupt()本质上并未停止线程，只是把线程的终止状态设置为了true，如果要真正通过Thread.interrupt()停止线程，还需要线程自己去控制（下文详解）。要真正理解interrupt()方法，要先了解stop()方法。</strong>
+</p>
 
 <h2 id="关于thread-stop">关于Thread.stop()</h2>
 
@@ -298,7 +297,6 @@ public void run(){
 
 <p>2.调用    Thread.interrupt()
 执行Thread.interrupt()后，会将t1的中断状态设置为true，线程自己在判断后，便会中断。此时数据还是同步的，不会发生stop()的问题。</p>
-
 
   
 <div class="prev-next-post pure-g">
