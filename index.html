@@ -21,13 +21,13 @@
   <!--<![endif]-->
 
   <!--[if lte IE 8]>
-  <link rel="stylesheet" href="https://dongxingHan.github.io/css/side-menu-old-ie.css">
+  <link rel="stylesheet" href="dongxingHan.github.io/css/side-menu-old-ie.css">
   <![endif]-->
   <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="https://dongxingHan.github.io/css/side-menu.css">
+  <link rel="stylesheet" href="dongxingHan.github.io/css/side-menu.css">
   <!--<![endif]-->
 
-  <link rel="stylesheet" href="https://dongxingHan.github.io/css/blackburn.css">
+  <link rel="stylesheet" href="dongxingHan.github.io/css/blackburn.css">
 
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -40,7 +40,7 @@
 
  
   
-  <link rel="alternate" type="application/rss+xml" title="绝世星星" href="https://dongxingHan.github.io/index.xml" />
+  <link rel="alternate" type="application/rss+xml" title="绝世星星" href="dongxingHan.github.io/index.xml" />
   
 
   
@@ -50,7 +50,7 @@
   <script>hljs.initHighlightingOnLoad();</script>
   
 
-  <link rel="shortcut icon" href="https://dongxingHan.github.ioimg/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="dongxingHan.github.ioimg/favicon.ico" type="image/x-icon" />
 
   
   
@@ -69,7 +69,7 @@
 <div id="menu">
 
   
-  <a class="pure-menu-heading brand" href="https://dongxingHan.github.io/">Menu</a>
+  <a class="pure-menu-heading brand" href="dongxingHan.github.io/">Menu</a>
 
 
   <div class="pure-menu">
@@ -77,37 +77,37 @@
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://dongxingHan.github.io/"><i class='fa fa-home fa-fw'></i>首页</a>
+          <a class="pure-menu-link" href="dongxingHan.github.io/"><i class='fa fa-home fa-fw'></i>首页</a>
       
         </li>
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://dongxingHan.github.io/post/"><i class='fa fa-list fa-fw'></i>分类</a>
+          <a class="pure-menu-link" href="dongxingHan.github.io/post/"><i class='fa fa-list fa-fw'></i>分类</a>
       
         </li>
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://dongxingHan.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+          <a class="pure-menu-link" href="dongxingHan.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
       
         </li>
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://dongxingHan.github.io/contact/"><i class='fa fa-phone fa-fw'></i>联系方式</a>
+          <a class="pure-menu-link" href="dongxingHan.github.io/contact/"><i class='fa fa-phone fa-fw'></i>联系方式</a>
       
         </li>
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://dongxingHan.github.io/topics/"><i class='fa fa-folder fa-fw'></i>话题</a>
+          <a class="pure-menu-link" href="dongxingHan.github.io/topics/"><i class='fa fa-folder fa-fw'></i>话题</a>
       
         </li>
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://dongxingHan.github.io/tags/"><i class='fa fa-tags fa-fw'></i>标签</a>
+          <a class="pure-menu-link" href="dongxingHan.github.io/tags/"><i class='fa fa-tags fa-fw'></i>标签</a>
       
         </li>
       
@@ -119,7 +119,7 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://dongxingHan.github.io/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      <a class="pure-menu-link" href="dongxingHan.github.io/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
     </li>
     
 
@@ -232,7 +232,63 @@
   
     <article>
   <header>
-    <h2><a href="https://dongxingHan.github.io/post/first/">First</a></h2>
+    <h2><a href="dongxingHan.github.io/post/interrupt/">Thread.interrupt()的真实含义</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>24 Apr 2018, 14:03</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="dongxingHan.github.iotopics/java-thread">JAVA Thread</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="dongxingHan.github.iotags/2018-04">2018-04</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  Thread.interrupt()本质上并未停止线程，只是把线程的终止状态设置为了true，如果要真正通过Thread.interrupt()停止线程，还需要线程自己去控制（下文详解）。要真正理解interrupt()方法，要先了解stop()方法。
+关于Thread.stop() &nbsp;&nbsp;&nbsp;&nbsp;首先，在解释Thread.interrupt()方法之前，应该先了解下关于Thread.stop()方法。在jdk的源码中，可以看到stop方法是废弃的。为什么会废弃这个方法呢？因为stop()方法太暴力了，会强行把执行到一半的线程终止，导致有一些共用数据不一致（即使数据加锁）。
+&nbsp;&nbsp;&nbsp;&nbsp;Thread.stop()方法在结束线程时，会直接终止线程，并且释放该线程持有的锁。但是这些锁本是为了保证数据的同步。一旦线程执行到一半，并且强行终止了线程,那么另一个等待着该锁的线程会读到这个错误的数据，最终可能会导致得到的数据与期望的不符。
+&nbsp;&nbsp;&nbsp;&nbsp;纠其原因，是由于线程的中断并不是由线程自身所控制的，而是由外界强行决定，因此线程无法保证数据的同步。
+&nbsp;&nbsp;&nbsp;&nbsp;可以看出，一个线程不应该由其他线程来强制中断或停止，而是应该由线程自己自行停止。因此，jdk关于终止线程提供了另外的方法：Thread.interrupt()
+Thread.interrupt()简介 &nbsp;&nbsp;&nbsp;&nbsp;interrupt()它与stop()不同，它不会真正停止一个线程，它仅仅是给这个线程发了一个信号告诉它它应该结束了（设置一个停止标志）。真正符合安全的做法，就是让线程自己去结束自己，而不是让一个线程去结束另外一个线程。 关于interrupt()jdk提供了3个方法：
+public void interrupt() 将调用者线程的中断状态设为true。 public boolean isInterrupted() 判断调用者线程的中断状态。 public static boolean interrupted() 判断线程是否被中断，并且清除中断状态  如何使用Thread.interrupt()中断线程 1.设置中断监听
+Thread t1 = new Thread( new Runnable(){ public void run(){ // 若未发生中断，就正常执行任务 while(!Thread.currentThread.isInterrupted()){ // 正常任务代码…… } // 中断的处理代码…… doSomething(); } } ).start();  2.调用 Thread.interrupt() 执行Thread.interrupt()后，会将t1的中断状态设置为true，线程自己在判断后，便会中断。此时数据还是同步的，不会发生stop()的问题。
+  </p>
+
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="dongxingHan.github.io/post/first/">First</a></h2>
 
     <div class="post-meta">
 
@@ -252,7 +308,7 @@
   </header>
 
   <p>
-  
+  第一次进行测试
   </p>
 
   
@@ -267,7 +323,7 @@
 
 </div>
 </div>
-<script src="https://dongxingHan.github.iojs/ui.js"></script>
+<script src="dongxingHan.github.iojs/ui.js"></script>
 
 
 <script>

@@ -2,14 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Topics on 绝世星星</title>
-    <link>https://dongxingHan.github.io/topics/</link>
+    <link>dongxingHan.github.io/topics/</link>
     <description>Recent content in Topics on 绝世星星</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 24 Apr 2018 14:03:58 +0800</lastBuildDate>
     
-	<atom:link href="https://dongxingHan.github.io/topics/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="dongxingHan.github.io/topics/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java Thread</title>
+      <link>dongxingHan.github.io/topics/java-thread/</link>
+      <pubDate>Tue, 24 Apr 2018 14:03:58 +0800</pubDate>
+      
+      <guid>dongxingHan.github.io/topics/java-thread/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
